@@ -1,4 +1,4 @@
-# avrora-sentinel
+# deka-sentinel
 
 
 This project uses [Gradle](https://gradle.org/).
