@@ -22,4 +22,4 @@ plugins {
 include(":app")
 include(":utils")
 
-rootProject.name = "deka-sentinel"
+rootProject.name = "wavedot-sentinel"
