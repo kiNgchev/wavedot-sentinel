@@ -1,0 +1,4 @@
+plugins {
+    org.jetbrains.dokka
+}
+

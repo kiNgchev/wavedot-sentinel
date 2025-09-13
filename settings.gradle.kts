@@ -10,3 +10,5 @@ plugins {
 }
 
 rootProject.name = "wavedot-sentinel"
+
+include("common")

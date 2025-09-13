@@ -1,22 +1,38 @@
-# Version catalog is a central place for you to declare and version dependencies
-# https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
-# https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
-
 [versions]
-kotlin = "2.1.21"
-kotlinxDatetime = "0.6.1"
-kotlinxSerializationJSON = "1.7.3"
-kotlinxCoroutines = "1.9.0"
+kotlin = "2.2.0"
+kover = "0.8.2"
+dokka = "2.0.0"
+knit = "0.5.0"
+bcv = "0.16.2"
+animalsniffer = "1.7.1"
+shadow = "8.1.1"
+jmh = "0.7.2"
+jmh-core = "1.37"
+kotlinx-io = "0.6.0"
+kotlintest = "2.0.7"
+coroutines = "1.6.4"
+junit4 = "4.12"
 
 [libraries]
-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
-kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
-kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
-# Libraries can be bundled together for easier import
-[bundles]
-kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+dokka-pathsaver = { module = "org.jetbrains.kotlinx:dokka-pathsaver-plugin", version.ref = "knit" }
+knitTest = { module = "org.jetbrains.kotlinx:kotlinx-knit-test", version.ref = "knit" }
+jmhCore = { module = "org.openjdk.jmh:jmh-core", version.ref = "jmh-core" }
+kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinx-io" }
+kotlintest = { module = "io.kotlintest:kotlintest", version.ref = "kotlintest" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+junit-junit4 = { module = "junit:junit", version.ref = "junit4" }
 
 [plugins]
-kotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+animalsniffer = { id = "ru.vyarus.animalsniffer", version.ref = "animalsniffer" }
+binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "bcv" }
+
+knit = { id = "org.jetbrains.kotlinx.knit", version.ref = "knit" }
+jmh = { id = "me.champeau.jmh", version.ref = "jmh" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
