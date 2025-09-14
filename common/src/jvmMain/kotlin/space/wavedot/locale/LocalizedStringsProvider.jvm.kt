@@ -9,7 +9,12 @@ public actual object LocalizedStringsProvider {
     init {
         val baseNames = getBaseNames()
         val locales = Locale.entries
-        var pairs =  baseNames.flatMap { baseName -> locales.map { locale -> baseName to locale.toJavaLocale() } }
+        var pairs =  baseNames.flatMap { baseName ->
+            val withPath = "locale.$baseName"
+            locales.map { locale ->
+                withPath to locale.toJavaLocale()
+            }
+        }
         pairs.forEach { (baseName, locale) ->
             bundles += ResourceBundle.getBundle(baseName, locale)
         }
