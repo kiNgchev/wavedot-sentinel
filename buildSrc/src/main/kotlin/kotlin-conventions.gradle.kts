@@ -28,12 +28,7 @@ kotlin {
         }
     }
     js {
-        nodejs() {
-            testTask {
-                environment("KEY_ONE", "VALUE_ONE")
-                environment("KEY_TWO", "1")
-            }
-        }
+        nodejs()
         useCommonJs()
     }
 

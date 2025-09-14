@@ -33,6 +33,6 @@ public actual object LocalizedStringsProvider {
 public fun Locale.toJavaLocale(): java.util.Locale {
     return when (this) {
         Locale.EN_US -> java.util.Locale.ENGLISH
-        Locale.RU_RU -> java.util.Locale.of("ru")
+        Locale.RU_RU -> java.util.Locale.Builder().setLanguage("ru").setRegion("RU").build()
     }
 }

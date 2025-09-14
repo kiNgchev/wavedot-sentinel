@@ -1,0 +1,29 @@
+public final class space/wavedot/locale/Locale : java/lang/Enum {
+	public static final field EN_US Lspace/wavedot/locale/Locale;
+	public static final field RU_RU Lspace/wavedot/locale/Locale;
+	public final fun getCode ()Ljava/lang/String;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lspace/wavedot/locale/Locale;
+	public static fun values ()[Lspace/wavedot/locale/Locale;
+}
+
+public final class space/wavedot/locale/LocalizedStringsProvider {
+	public static final field INSTANCE Lspace/wavedot/locale/LocalizedStringsProvider;
+	public final fun getFallbackLocale ()Lspace/wavedot/locale/Locale;
+	public final fun getLocalizedString (Lspace/wavedot/locale/Locale;Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class space/wavedot/locale/LocalizedStringsProviderKt {
+	public static final fun getBaseNames ()Ljava/util/List;
+}
+
+public final class space/wavedot/locale/LocalizedStringsProvider_jvmKt {
+	public static final fun toJavaLocale (Lspace/wavedot/locale/Locale;)Ljava/util/Locale;
+}
+
+public final class space/wavedot/locale/MessageProvider {
+	public fun <init> (Lspace/wavedot/locale/LocalizedStringsProvider;)V
+	public final fun getMessage (Lspace/wavedot/locale/Locale;[Ljava/lang/Object;)Ljava/lang/String;
+	public final fun getStringsProvider ()Lspace/wavedot/locale/LocalizedStringsProvider;
+}
+
