@@ -1,9 +1,9 @@
 package space.wavedot.locale
 
-public actual class MessageProvider(provider: LocalizedStringsProvider) {
-    public actual val stringsProvider: LocalizedStringsProvider = provider
+public actual object MessageProvider {
+    public actual val stringsProvider: LocalizedStringsProvider = LocalizedStringsProvider
 
-    public actual fun getMessage(locale: Locale, vararg args: Any): String {
-        TODO("Not yet implemented")
+    public actual fun getMessage(key: String, locale: Locale, vararg args: Any): String {
+        return stringsProvider.getLocalizedString(key, locale).format(args)
     }
 }

@@ -1,10 +1,7 @@
 package space.wavedot.locale
 
 public expect object LocalizedStringsProvider {
-    public val fallbackLocale: Locale
+    public fun getLocalizedString(key: String, locale: Locale): String
 
-    public fun getLocalizedString(locale: Locale, key: String): String
-
+    public fun createBundle(baseName: String): Boolean
 }
-
-public fun getBaseNames(): List<String> = listOf("default")

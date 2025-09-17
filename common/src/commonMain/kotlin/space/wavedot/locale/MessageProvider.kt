@@ -1,7 +1,7 @@
 package space.wavedot.locale
 
-public expect class MessageProvider {
+public expect object MessageProvider {
     public val stringsProvider: LocalizedStringsProvider
 
-    public fun getMessage(locale: Locale, vararg args: Any): String
+    public fun getMessage(key: String, locale: Locale, vararg args: Any): String
 }

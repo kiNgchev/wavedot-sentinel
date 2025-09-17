@@ -1,32 +1,46 @@
 package space.wavedot.locale
 
+import java.util.MissingResourceException
 import java.util.ResourceBundle
 
 public actual object LocalizedStringsProvider {
-    public actual val fallbackLocale: Locale = Locale.EN_US
+    private val fallbackLocale: Locale = Locale.EN_US
     private var bundles: Array<ResourceBundle> = arrayOf()
 
-    init {
-        val baseNames = getBaseNames()
-        val locales = Locale.entries
-        var pairs =  baseNames.flatMap { baseName ->
-            val withPath = "locale.$baseName"
-            locales.map { locale ->
-                withPath to locale.toJavaLocale()
+    public actual fun getLocalizedString(key: String, locale: Locale): String {
+        bundles.filter { it.locale == locale.toJavaLocale() }.forEach {
+            try {
+                return it.getString(key)
+            } catch (_: MissingResourceException) {
+                return@forEach
             }
         }
+
+        return getFallbackLocaleLocalizedString(key)
+    }
+
+    public actual fun createBundle(baseName: String): Boolean {
+        val locales = Locale.entries
+        val pairs = locales.map {
+            baseName to it.toJavaLocale()
+        }
+
         pairs.forEach { (baseName, locale) ->
             bundles += ResourceBundle.getBundle(baseName, locale)
         }
+
+        return true
     }
 
-    public actual fun getLocalizedString(locale: Locale, key: String): String {
-        bundles.filter { it.locale == locale.toJavaLocale() }.forEach {
-            return it.getString(key)
+    public fun getFallbackLocaleLocalizedString(key: String): String {
+        bundles.filter { it.locale == fallbackLocale.toJavaLocale() }.forEach {
+            try {
+                return it.getString(key)
+            } catch (_: MissingResourceException) {
+                return@forEach
+            }
         }
-
-        //TODO: Ask fallback locale bundle
-        return "not found"
+        return key
     }
 }
 

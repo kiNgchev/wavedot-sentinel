@@ -1,12 +1,9 @@
-package space.wavedot.test
-
-import space.wavedot.locale.Bundle
 import space.wavedot.locale.Locale
 import space.wavedot.locale.LocalizedStringsProvider
 import space.wavedot.locale.MessageProvider
+import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFails
 
 class LocalizationTest {
     @Test
@@ -15,6 +12,11 @@ class LocalizationTest {
             LocalizedStringsProvider.createBundle("locale.test"),
             true
         )
+    }
+
+    @BeforeTest
+    fun beforeTest() {
+        LocalizedStringsProvider.createBundle("locale.test")
     }
 
     @Test

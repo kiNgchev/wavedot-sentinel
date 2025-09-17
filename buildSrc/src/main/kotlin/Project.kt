@@ -1,7 +1,7 @@
 object Project {
     const val NAME = "Wavedot-Sentinel"
-    const val GROUP = "space.wavedot.sentinel"
-    const val DESCRIPTION = "Kaid is a kotlin developer toolkit"
+    const val GROUP = "space.wavedot"
+    const val DESCRIPTION = "Library for Wavedot developers"
     const val VERSION = "0.0.1"
 }
 
