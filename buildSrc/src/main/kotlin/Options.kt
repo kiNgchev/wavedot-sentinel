@@ -19,7 +19,10 @@ internal fun ApiValidationExtension.bvcOptions() {
 internal fun KotlinCommonCompilerOptions.commonCompilerOptions() {
     allWarningsAsErrors.set(true)
     progressiveMode.set(true)
-    freeCompilerArgs.add("-Xexpect-actual-classes")
+    freeCompilerArgs.addAll(
+        "-Xexpect-actual-classes",
+        "-Xcontext-sensitive-resolution"
+        )
 }
 
 internal fun KotlinJvmCompilerOptions.jvmCompilerOptions() {

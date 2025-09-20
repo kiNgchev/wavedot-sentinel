@@ -5,3 +5,5 @@ public expect object LocalizedStringsProvider {
 
     public fun createBundle(baseName: String): Boolean
 }
+
+public fun createBundle(baseName: String): Boolean = LocalizedStringsProvider.createBundle(baseName)
