@@ -12,6 +12,7 @@ kotlinx-io = "0.6.0"
 kotlintest = "2.0.7"
 coroutines = "1.6.4"
 junit4 = "4.12"
+ktor = "3.3.0"
 
 [libraries]
 kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -26,6 +27,9 @@ kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "
 kotlintest = { module = "io.kotlintest:kotlintest", version.ref = "kotlintest" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 junit-junit4 = { module = "junit:junit", version.ref = "junit4" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor"}
 
 [plugins]
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
