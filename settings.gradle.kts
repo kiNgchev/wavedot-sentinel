@@ -12,3 +12,5 @@ plugins {
 rootProject.name = "wavedot-sentinel"
 
 include("common")
+include("musixmatch")
+include("internal")

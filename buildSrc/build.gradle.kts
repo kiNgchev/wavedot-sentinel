@@ -9,6 +9,7 @@ repositories {
 
 dependencies {
     implementation(libs.kotlin)
+    implementation(plugin(libs.plugins.kotlin.serialization))
     implementation(plugin(libs.plugins.kover))
     implementation(plugin(libs.plugins.dokka))
     implementation(plugin(libs.plugins.animalsniffer))

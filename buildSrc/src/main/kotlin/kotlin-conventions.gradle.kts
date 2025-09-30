@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
 
 plugins {
     org.jetbrains.kotlin.multiplatform
+    org.jetbrains.kotlin.plugin.serialization
     org.jetbrains.kotlinx.`binary-compatibility-validator`
     org.jetbrains.dokka
 }
@@ -11,7 +12,11 @@ repositories {
     mavenCentral()
 }
 
+val libs = the<VersionCatalogsExtension>().named("libs")
+
 dependencies {
+    commonMainImplementation(libs.findLibrary("kotlin-serialization-core").get())
+    commonMainImplementation(libs.findLibrary("kotlin-serialization-json").get())
     commonTestImplementation(kotlin("test"))
 }
 
